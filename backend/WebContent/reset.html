@@ -1,0 +1,91 @@
+<html>
+<head>
+<meta http_equip+"Content Type" content="text/html"; charset="UTF-8"/>
+
+<title>Courier systems</title>
+<link href="reset.css" rel="stylesheet" type="text/css"/>
+<link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
+<style>
+#msg {
+    visibility:hidden;
+    min-width:250px;
+    background-color:yellow;
+    color:#000;
+    text-align:center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    right: 30%;
+    top: 30px;
+    font-size: 17px;
+}
+
+#msg.show {
+     visibility: visible;
+     -webkit-animation: fadein 0,5s,fadeout 0.5s 2.5s;
+     animation: fadein 0.5s,fadeout 0.5s,2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {top: 0;opacity: 0;}
+  to {top: 30px; opacity: 1;}
+}
+
+@keyframes fadein{
+ from {top:0; opacity: 0;}
+ to {top: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadein {
+  from {top: 30px;opacity: 1;}
+  to {top: 0; opacity: 0;}
+}
+
+@keyframes fadein{
+ from {top:30px; opacity: 1;}
+ to {top: 0; opacity: 0;}
+}
+</style>
+<script>
+  function ResetVal(){
+    var opwd=document.f3.opwd.value.length;
+    var npwd=document.f3.npwd.value.length;
+    var cnpwd=document.f3.cnpwd.value.length;
+    if(opwd==null||opwd==""||opwd == 0 ||opwd < 7 || opwd > 12){
+      alert("Password should not be empty / length be between 7 to 12");
+    }
+    else if(npwd==null||npwd==""||npwd == 0 ||npwd < 7 || npwd > 12){
+      alert("Password should not be empty / length be between 7 to 12");
+    }
+    else if(cnpwd==null||cnpwd==""||cnpwd == 0 ||cnpwd < 7 || cnpwd > 12){
+      alert("Password should not be empty / length be between 7 to 12");
+    }
+    else if(cnpwd!=npwd){
+      alert("Passwords donot match!!\nPlease enter similar passwords.");
+    }
+    else{
+      var x=document.getElementById("msg");
+      x.className = "show";
+      setTimeout(function() { x.className =x.className.replace("show", ""); }, 3000);
+    }
+  }
+
+</script>
+</head>
+
+<body>
+ <div class="reset">
+ <form action="reset.jsp" method="post" name="f3">
+  <h2 text-align="center" style="color:#fff;">Reset password</h2>
+  <input type="password" name="opwd" placeholder="Old password" required autofocus/><br /><br />
+  <input type="password" name="npwd" placeholder="New password" required/><br /><br />
+  <input type="password" name="cnpwd" placeholder="Confirm new password" required/><br /><br />
+  <input type="submit" value="save" onclick="ResetVal()"/><br/><br />
+  <a href="login.html" style="text-decoration:none;">Go back to Signin page</a><br /><br />
+  <div id="msg">your password changed successfully!!</div>
+  
+ </form>
+ </div>
+</body>
+</html>

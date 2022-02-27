@@ -1,0 +1,170 @@
+@import url("http://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap");
+* {
+    font-family: "Poppins", sans-serif;
+    line-height: 30px;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url("contactUs.jpg");
+    background-repeat:no-repeat;
+	background-attachment: fixed;
+    background-size: cover;
+}
+
+.container {
+    background: #ffffff;
+    height: 535px;
+    display: flex;
+    justify-content: center;
+    border-radius: 2px;
+    margin-top: 60px;
+    margin-left: 50px;
+    box-shadow: -10px 20px 50px #000000cc;
+}
+
+.contact-info {
+    padding: 20px;
+    background: black;
+    width: 230px;
+    height: 360px;
+    color: #ffffff;
+    margin-top: 50px;
+    margin-left: -100px;
+    border-radius: 2px;
+}
+
+span {
+    color: #ffffff;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 15px;
+    margin-top: 2px;
+}
+
+i {
+    width: 45px;
+    cursor: pointer;
+    color: black;
+    font-size: 15px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #ffffff;
+    margin-top: 10px;
+}
+
+.social {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#social-icon {
+    font-size: 30px;
+    color: #ffffff;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+#social-icon:hover {
+    color: #fa1e34;
+}
+
+.contact {
+    padding: 20px;
+    width: 600px;
+    height: 350px;
+}
+
+.heading {
+    font-size: 60px;
+    margin-bottom: 50px;
+}
+
+.inputname {
+    color: black;
+    pointer-events: none;
+    margin-top: 0px;
+    padding: 0;
+}
+
+.inputbox {
+    width: 255px;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.inputname {
+    position: relative;
+    top: -30px;
+    left: 0;
+    transition: 0.25s ease-in-out;
+}
+
+input {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid black;
+    padding: 5px;
+}
+
+textarea {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid black;
+    resize: none;
+}
+
+.textname {
+    color: black;
+    pointer-events: none;
+    margin-top: 0px;
+    padding: 0;
+    position: relative;
+    top: -100px;
+    left: 0;
+    transition: 0.25s ease-in-out;
+}
+
+.container .contact .inputbox input:focus~span,
+.container .contact .inputbox input:valid~span {
+    position: relative;
+    top: -60px;
+    font-size: 10px;
+    color: #fa1e34;
+}
+
+.container .contact .inputbox textarea:focus~span,
+.container .contact .inputbox textarea:valid~span {
+    position: relative;
+    top: -130px;
+    font-size: 10px;
+    color: #fa1e34;
+}
+
+.submit {
+    background: black;
+    color: #ffffff;
+    border-radius: 2px;
+    font-weight: 600;
+}
+.submit:hover{
+    background-color: #fa1e34;
+}
+
+.contact a{
+    text-align: center;
+    text-decoration: blink;
+    color: black;
+}
+.contact a:hover{
+    color:#fa1e34;
+}
+
+

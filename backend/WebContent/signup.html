@@ -1,0 +1,109 @@
+<html>
+<head>
+<meta http_equip+"Content Type" content="text/html"; charset="UTF-8"/>
+<title>SignUp</title>
+<link href="signup.css" rel="stylesheet" type="text/css" />
+<link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
+<style>
+#msg {
+    visibility:hidden;
+    min-width:250px;
+    background-color:yellow;
+    color:#000;
+    text-align:center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    right: 30%;
+    top: 30px;
+    font-size: 17px;
+}
+
+#msg.show {
+     visibility: visible;
+     -webkit-animation: fadein 0.5s,fadeout 0.5s 2.5s;
+     animation: fadein 0.5s,fadeout 0.5s,2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {top: 0;opacity: 0;}
+  to {top: 30px; opacity: 1;}
+}
+
+@keyframes fadein{
+ from {top:0; opacity: 0;}
+ to {top: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadein {
+  from {top: 30px;opacity: 1;}
+  to {top: 0; opacity: 0;}
+}
+
+@keyframes fadein{
+ from {top:30px; opacity: 1;}
+ to {top: 0; opacity: 0;}
+}
+</style>
+<script>
+  function SignUp(){
+    var fn=document.f2.fname.value;
+    var ln=document.f2.lname.value;
+    var pwd=document.f2.pass.value.length;
+    var cpwd=document.f2.cpass.value.length;
+    var em=document.f2.mail.value;
+    
+    if(fn==null||fn==""){
+      alert("Enter your First Name.");
+    }
+    else if(ln==null||ln==""){
+      alert("Enter your Last Name,");
+    }
+    else if(pwd==null||pwd==""||pwd == 0 ||pwd < 7 || pwd > 12){
+      alert("Password should not be empty / length be between 7 to 12");
+    }
+    else if(cpwd==null||cpwd==""||cpwd == 0 ||cpwd < 7 || cpwd > 12){
+      alert("Password should not be empty / length be between 7 to 12");
+    }
+    else if(cpwd!=pwd){
+      alert("Passwords donot match!!\nPlease enter similar passwords.");
+    }
+    
+    else {
+      var x = document.getElementById("msg");
+      x.className = "show";
+      setTimeout(function() { x.className = x.className.replace("show", ""); }, 3000);
+    }
+
+  }
+</script>
+
+
+
+</head>
+
+<body>
+<div class="signup">
+     <form action="signup.jsp" method="post" name="f2">
+     <h2 style="color: #fff;">Sign Up</h2>
+     <input type="text" name="fname" placeholder="First name" required autofocus>
+     <br><br>
+     <input type="text" name="lname" placeholder="Last name" required>
+     <br><br>
+     <input type="password" name="pass" placeholder="password" required>
+     <br><br>
+     <input type="password" name="cpass" placeholder="confirm password" required>
+     <br><br>
+     <input type="email" name="mail" placeholder="Email address" required>
+     <br><br>
+     <input type="submit" value="Sign up" onclick=SignUp()>
+     <br><br>
+     Already have account?<a href="login.html" style="text-decoration:none; font-family: 'Play', sans-serif;color: yellow">&nbsp;Log In</a>
+      <div id="msg">Congratulations you had signed up successfully</div>
+      
+     </form>
+</div>
+</body>
+</html>
+

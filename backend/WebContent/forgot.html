@@ -1,0 +1,77 @@
+<html>
+<head>
+<meta http_equip+"Content Type" content="text/html"; charset="UTF-8"/>
+<title>Congratulations</title>
+<link href="forgot.css" rel="stylesheet" type="text/css" />
+<link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
+<style>
+#snackbar {
+    visibility:hidden;
+    min-width:250px;
+    background-color:yellow;
+    color:#000;
+    text-align:center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    right: 30%;
+    top: 30px;
+    font-size: 17px;
+}
+
+#snackbar.show {
+     visibility: visible;
+     -webkit-animation: fadein 0,5s,fadeout 0.5s 2.5s;
+     animation: fadein 0.5s,fadeout 0.5s,2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {top: 0;opacity: 0;}
+  to {top: 30px; opacity: 1;}
+}
+
+@keyframes fadein{
+ from {top:0; opacity: 0;}
+ to {top: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadein {
+  from {top: 30px;opacity: 1;}
+  to {top: 0; opacity: 0;}
+}
+
+@keyframes fadein{
+ from {top:30px; opacity: 1;}
+ to {top: 0; opacity: 0;}
+}
+</style>
+<script>
+  function forgotVal(){
+    var em=document.f4.mail.value;
+      var x = document.getElementById("snackbar");
+      x.className = "show";
+      setTimeout(function() { x.className =  x.className.replace("show", ""); }, 3000);
+    
+  }
+</script>
+</head>
+
+
+<body>
+<div class="forgot">
+
+<form name="f4">
+
+<h2 align="center" style="color:#fff;">Forgot password</h2>
+<h5 style="font-size:14px; color:yellow;">Enter email here that you used on your account.we send link on your mail to reset your password.</h5>
+<input type="email" name="mail" placeholder="Enter your email" /><br /><br /><br>
+<input type="submit" value="Send" onclick="forgotVal()"/><br/><br />
+<a href="login.html" style="text-decoration:none;">Go back to Login page</a><br /><br />
+
+<div id="snackbar">Link sent to your email successfully!!</div>
+</form>
+</div>
+</html>
+
+
